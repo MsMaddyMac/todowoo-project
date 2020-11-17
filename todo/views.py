@@ -20,7 +20,7 @@ def registeruser(request):
     if request.POST['password1'] == request.POST['password2']:
       try:
           # Create a new user
-        user = User.objects.create_user(request.POST['username'], request.POST['password1'])
+        user = User.objects.create_user(username = request.POST['username'], password = request.POST['password1'])
           #  Save new user in database
         user.save()
         # log newly created user in upon successful creation
