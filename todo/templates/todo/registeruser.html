@@ -1,3 +1,7 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
 <h1>Sign Up</h1>
 <h2>{{ error }}</h2>
 <form method='POST'>
@@ -7,3 +11,4 @@
 </form>
 {% comment %} render Django's UserCreationForm passed in from urls.py {% endcomment %}
 {% comment %} you can chain '.as_p' to render all elements inside the form as paragraph tags {% endcomment %}
+{% endblock %}
