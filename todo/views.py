@@ -95,5 +95,7 @@ def deletetodo(request, todo_pk):
     todo.delete()
     return redirect('currenttodos')
   
-  
+def completedtodos(request):
+  todos = Todo.objects.filter(user=request.user, date_completed__isnull=False).order_by('-date_completed')
+  return render(request, 'todo/completedtodos.html', {'todos': todos})
 
