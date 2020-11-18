@@ -6,7 +6,12 @@ Here are your current todos...
 
 <ul>
   {% for todo in todos%}
-  <li>{{ todo.title }}</li>
+  <li>
+    <a href='{% url 'viewtodo' todo.id %}'>
+    {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}
+    {% if todo.memo %} - {{ todo.memo }}{% endif %}
+    </a>
+  </li>
   {% endfor %}
 </ul>
 
